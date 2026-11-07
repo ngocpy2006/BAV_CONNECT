@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-canvas: #f5f7f5;
+  --color-paper: #ffffff;
+  --color-ink: #172c25;
+  --color-muted: #465b51;
+  --color-line: #d8e3dc;
+  --color-brand: #176649;
+  --color-brand-dark: #104f37;
+  --color-mint: #e2f3e7;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-3 outline-brand;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-8;
+  }
+
+  .button {
+    @apply inline-flex shrink-0 items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-dark disabled:opacity-60;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-line bg-paper px-3 py-2.5 text-sm text-ink;
+  }
+
+  .surface {
+    @apply rounded-xl border border-line bg-paper;
+  }
+}
